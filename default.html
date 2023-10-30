@@ -94,7 +94,7 @@
         function checkNums(elementID){            
             let elementValue = document.getElementById(elementID).value;
 
-            if (isNaN(elementValue)){
+            if (isNaN(elementValue) || isNaN(parseFloat(elementValue))){
                 var log = "Giá trị nhập ở <i>"; 
                 if (elementID == "firstNum"){
                     log += "Số thứ nhất";
@@ -131,7 +131,6 @@
             }
 
             if (!(checkNums('firstNum') && checkNums('secondNum'))){
-                alert("error");
                 return;
             }
 
@@ -151,7 +150,7 @@
                     return;
                 break;
                 default: 
-                    alert("Error");    
+                    // alert("Error");    
                     return;
                 break;
             }
